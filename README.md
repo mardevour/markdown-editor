@@ -3,7 +3,7 @@
 simple editor de markdown que se puede usar offline
 <br>
 
-fork de [marqdown](https://github.com/marqdown/marqdown) pero con colores mas xulos
+fork de [marqdown](https://github.com/marqdown/marqdown)
 
 ### > para usar:
 - [descargalo](https://github.com/mardevour/markdown-editor/archive/refs/heads/main.zip)
