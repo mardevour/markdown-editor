@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="a portable markdown editor with an on-the-fly preview.">
+        <title>🗒️ Editor Markdown</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="editor.js" id="marqdown-scripts" type="text/javascript"></script>
+        <script src="links.js" id="marqdown-scripts" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="col-xs-10 col-xs-offset-1" id="app">
+            <div class="col-md-6 col-md-push-6" id="source-container">
+                <textarea>
+# Título (h1)
+
+muestra de documento markdown, para probar el editor.
+
+a la izquierda tienes el editor y a la derecha una vista previa del documento.
+
+te recomiendo descargar este documento antes de empezar a probar para que puedas tenerlo como referencia.
+
+## sintaxis - encabezado (h2)
+
+parágrafos separados por una línea en blanco.
+
+segundo parágrafo. _Cursiva_, **negrita**, y `monoespaciada`, `monoespaciada con *em*`.
+
+también puedes crear [links](https://media.tenor.com/Gha_3s9QxesAAAAi/cat.gif) de esta forma
+
+puedes escapar estos \*de esta forma\* o \*\*así\*\*
+
+así puedes hacer saltos de línea:
+(`br` de break)
+<br> 
+<br>
+
+### título (h3)
+
+ejemplo de código o recuadro:
+
+```ts
+const x = 5;
+const y = 6;
+
+console.log(`5 + 6 is ${5 + 6}`);
+```
+<br>
+
+y aquí un ejemplo de cita:
+
+> y es que esa gyal tiene que ser mi gambina
+> la veo por la calle, adoro cómo camina
+>
+> etc
+###### - alberto gambino
+
+## listas
+
+[ignora este enlace ahora y úsalo luego para volver a #otras cosas](#otras-cosas)
+
+listas desordenadas:
+
+- esto
+- eso
+- aquello
+
+listas ordenadas:
+
+1. primero
+2. segundo
+3. tercero
+
+y aquí una lista anidada:
+
+1.  primero, coge estos ingredientes:
+
+    - zanahorias
+    - apio
+    - lentejas
+
+
+2.  calienta agua.
+
+3.  vierte todo en la olla y sigue
+    este algoritmo:
+
+        encuentra una cuchara de madera
+        retira el tapón
+        remueve
+        vuelve a tapar
+        balancea la cuchara de madera sobre el mango de la olla
+        espera 10 minutos
+        vuelve al primer paso (o apaga el fuego cuando termines)
+
+    no golpees la cuchara de madera o se caerá.
+
+## otras cosas
+
+puedes usar un [enlace asi](#listas) para dirigir a un apartado del documento
+
+---
+
+esto deberían estar entre 2 líneas horizontales
+
+---
+
+asi puedes poner una imagen:
+
+![hello](https://media.tenor.com/Gha_3s9QxesAAAAi/cat.gif)
+
+---
+
+también puedes hace que una imagen sea un enlace:
+
+[![hello](https://media1.tenor.com/m/lpb2Mcwc0FIAAAAd/bingus-button.gif)](https://media.tenor.com/Gha_3s9QxesAAAAi/cat.gif)
+
+---
+
+así puede hacer un desplegable y poner cosas dentro
+
+<details>
+    <summary>desplegable</summary>
+    <p>
+        cosas <br>
+        cosas <br>
+        cosas <br>
+    </p>
+</details>
+<br>
+
+aunq por como se parsea el desplegable no puedes formatear nada dentro ni poner imágenes 😔
+
+## tablas
+
+las tablas pueden ser así:
+
+| sintaxis | descripción |
+| --------- | ----------- |
+| encabezado | título |
+| párrafo | texto |
+
+o así:
+
+| tamaño | material | color |
+|--------|----------|-------|
+| 9 | cuero | marrón |
+| 10 | lino | natural |
+| 11 | cristal | transparente |
+
+puedes usar `:` para alinear el texto en las columnas:
+
+| a la izquierda | a la derecha | centrado |
+| :-------------- | -------------: | :--------: |
+| texto | texto | texto |
+| texto | texto | texto |
+| texto | texto | texto |
+
+                </textarea>
+            </div>
+            <div class="col-md-6 col-md-pull-6" id="preview-container">
+                <div class="cm-s-marqdown" id="preview"></div>
+            </div>
+            <footer>
+                <a class="btn btn-success pull-right" id="download-markdown" download="markdown.md" href="#" title="Download Markdown">
+                    <span class="hidden-xs hidden-sm">Descargar Markdown</span>
+                    <span class="hidden-md hidden-lg">&#x21CA;</span>
+                </a>
+                <span class="btn btn-success pull-right" id="upload-markdown">
+                    <span class="hidden-xs hidden-sm">Abrir archivo</span>
+                    <span class="hidden-md hidden-lg">&#x21EB;</span>
+                    <input type="file"/>
+                </span>
+                <p class="gt-link">
+                    <a href="https://github.com/mardevour">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        GitHub
+                    </a>
+                </p>
+            </footer>            
+        </div>
+    </body>
+</html>
